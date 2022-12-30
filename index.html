@@ -1,157 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Entradas</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <title>Venta de Entradas</title>
 </head>
-
 <body>
-    <h1>Saca tus Entradas Aca!</h1>
+    <header>
+        <h1>Compra Tus Entradas Aca</h1>
+        <button id="cesta-carrito"><span id="contador-carrito">0</span></button>
+    </header>
 
-    <div class="cards">
+    <main id="card-entrada">
 
-        <div class="card">
-            <div class="card__image-holder">
-                <img class="card__image" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
-            </div>
-            <div class="card-title">
-                <h2>
-                    Card title
-                </h2>
-            </div>
-            <div class="card-flap flap1">
-                <div class="card-description">
-                    This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when
-                    they're not available etc.
-                </div>
-                <div class="card-flap flap2">
-                    <div class="card-actions">
-                        <a href="#" class="btn">Read more</a>
-                    </div>
-                </div>
-            </div>
+    </main>
+
+    <div class="modal-carrito">
+        <h3>Carrito</h3>
+        <button id="btn-cerrar-carrito">X</button>
+        <div id="carrito-contenedor">
+          <!-- <p>Producto</p>
+          <p>Precio</p>
+          <p id=cantidad${producto.id}>Cantidad</p>
+          <button class="btn waves-effect waves-ligth boton-eliminar" value="">X</button> -->
         </div>
+        <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
+      </div>
+    </div>
 
-        <div class="card">
-            <div class="card__image-holder">
-                <img class="card__image" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
-            </div>
-            <div class="card-title">
-                <h2>
-                    Card title
-                </h2>
-            </div>
-            <div class="card-flap flap1">
-                <div class="card-description">
-                    This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when
-                    they're not available etc.
-                </div>
-                <div class="card-flap flap2">
-                    <div class="card-actions">
-                        <a href="#" class="btn">Read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card__image-holder">
-                <img class="card__image" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
-            </div>
-            <div class="card-title">
-                <h2>
-                    Card title
-                </h2>
-            </div>
-            <div class="card-flap flap1">
-                <div class="card-description">
-                    This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when
-                    they're not available etc.
-                </div>
-                <div class="card-flap flap2">
-                    <div class="card-actions">
-                        <a href="#" class="btn">Read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card__image-holder">
-                <img class="card__image" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
-            </div>
-            <div class="card-title">
-                <h2>
-                    Card title
-                </h2>
-            </div>
-            <div class="card-flap flap1">
-                <div class="card-description">
-                    This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when
-                    they're not available etc.
-                </div>
-                <div class="card-flap flap2">
-                    <div class="card-actions">
-                        <a href="#" class="btn">Read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card__image-holder">
-                <img class="card__image" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
-            </div>
-            <div class="card-title">
-                <h2>
-                    Card title
-                </h2>
-            </div>
-            <div class="card-flap flap1">
-                <div class="card-description">
-                    This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when
-                    they're not available etc.
-                </div>
-                <div class="card-flap flap2">
-                    <div class="card-actions">
-                        <a href="#" class="btn">Read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card__image-holder">
-                <img class="card__image" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
-            </div>
-            <div class="card-title">
-                <h2>
-                    Card title
-                </h2>
-            </div>
-            <div class="card-flap flap1">
-                <div class="card-description">
-                    This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when
-                    they're not available etc.
-                </div>
-                <div class="card-flap flap2">
-                    <div class="card-actions">
-                        <a href="#" class="btn">Read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    <script src="src/components/data/tickets.js"></script>
+    <script src="src/components/cart/cart.js"></script>
+    <script src="src/components/cart/modal.js"></script>
     
-
+    <script src="src/App.js"></script>
+    <script src="modal.js"></script>
     
-
-    <script src="tickets"></script>
-    <script src="main.js"> /* Aca se puede escribir JS*/</script>
 </body>
-
 </html>
