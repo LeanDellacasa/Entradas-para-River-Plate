@@ -15,10 +15,12 @@ const validarTicketEnCarrito = (ticketId) => {
         const ticket = tickets.find( ticket => ticket.id == ticketId);
         carrito.push(ticket);
         mostrarTicketEnCarrito(ticket);
+        TotalesCarrito(carrito);
     } else {
         ticketRepetido.cantidad++ 
         const cantidadTicket = document.getElementById(`cantidad${ticketRepetido.id}`);
         cantidadTicket.innerText = `Cantidad: ${ticketRepetido.cantidad}`;
+        TotalesCarrito(carrito);
     }
 };
 
@@ -33,6 +35,60 @@ const mostrarTicketEnCarrito =(ticket) => {
           <button class="boton-eliminar" value="${ticket.id}">X</button> -->`
 
     contenedor.appendChild(div);
+    
 };
 
-const TotalesCarrito = (carrito) => 
+const TotalesCarrito = (carrito) => {
+    const totalCantidad = carrito.reduce((acc, item) => acc + item.cantidad ,0);
+    const totalCompra = carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
+
+    mostrarTotalCarrito ( totalCantidad, totalCompra);
+    guardarCarritoStorage(carrito);
+
+};
+
+const mostrarTotalCarrito = (totalCantidad, totalCompra) => {
+    const contadorCarrito = document.getElementById( 'contador-carrito');
+    const precioTotal = document.getElementById('precioTotal');
+
+    contadorCarrito.innerText = totalCantidad;
+    precioTotal.innerHTML = totalCompra;
+};
+
+const eliminarTicketCarrito = (ticketId) => {
+    const ticketIndex = carrito.findIndex(ticket => ticket.id == ticketId);
+    carrito.splice(ticketIndex, 1);
+
+    actualizarCarrito(carrito);
+    TotalesCarrito(carrito);
+    
+};
+
+const actualizarCarrito = (carrito) => {
+    const contenedor = document.getElementById('carrito-contenedor');
+    
+    contenedor.innerHTML = '';
+
+    carrito.forEach(ticket => {
+        
+        const div = document.createElement('div');
+        div.classList.add('ticketEnCarrito');
+        div.innerHTML = `
+            <p>${ticket.rival}</p>
+            <p>Precio: ${ticket.precio}</p>
+            <p id=cantidad${ticket.id}>Cantidad: ${ticket.cantidad}</p>
+            <button class="boton-eliminar" value="${ticket.id}">X</button> -->`
+
+        contenedor.appendChild(div);
+
+    });
+};
+
+const guardarCarritoStorage = (carrito) => {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+};
+
+const obtenerCarritoStorage = () => {
+    const carritoStorage = JSON.parse(localStorage.getItem('carrito'));
+    return carritoStorage;
+};

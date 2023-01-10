@@ -20,4 +20,3 @@ const mostrarEntradas = () => {
 
 }
 
-mostrarEntradas();
