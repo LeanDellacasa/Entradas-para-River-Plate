@@ -18,9 +18,11 @@ body {
 }
 
 img {
-  border-radius: 15px;
-}
-
+  border-radius: 25px;
+  -webkit-box-shadow: -2px 6px 14px -4px rgba(230,212,18,1);
+  -moz-box-shadow: -2px 6px 14px -4px rgba(230,212,18,1);
+  box-shadow: -2px 6px 14px -4px rgba(230,212,18,1);}
+  
 header{
   display: flex;
   justify-content: space-between;
@@ -39,10 +41,10 @@ h1{
 
 #cesta-carrito:hover {
   cursor: pointer;
-  color: antiquewhite;
-  background-color: brown;
-  width: 200px;
-  height: 200px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(250, 240, 104);
+  width: 100px;
+  height: 100px;
 }
 
 #cesta-carrito:focus {
@@ -53,10 +55,16 @@ h1{
   display: grid;
   gap: 1rem;
   max-width: 60rem;
-  margin: 80px;
+  margin: 100px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+}
+
+.modal-carrito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

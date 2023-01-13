@@ -1,7 +1,11 @@
 const mostrarEntradas = () => {
     const contenedor = document.getElementById("card-entrada");
 
-    tickets.forEach(ticket => {
+    fetch('/stock.json')
+        .then(resp => resp.json())
+        .then(data => {
+
+    data.forEach(ticket => {
         const div = document.createElement('div');
         div.classList.add ('card');
         div.innerHTML += `<div class = "card-image">
@@ -18,5 +22,4 @@ const mostrarEntradas = () => {
     });
 
 
-}
-
+})};
