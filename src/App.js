@@ -1,9 +1,10 @@
-const mostrarEntradas = () => {
+const mostrarEntradas = async () => {
     const contenedor = document.getElementById("card-entrada");
 
-    fetch('/stock.json')
-        .then(resp => resp.json())
-        .then(data => {
+
+    const data =  await ticketsController() 
+
+    
 
     data.forEach(ticket => {
         const div = document.createElement('div');
@@ -14,7 +15,7 @@ const mostrarEntradas = () => {
             <div class = "card-content">
             <h3>${ticket.torneo}</h3>
             <h2>${ticket.rival}</h2>
-            <h2>${ticket.precio}</h2>
+            <h2>$ ${ticket.precio}</h2>
             <button id><i id=${ticket.id} class="agregar">Comprar Ya</i></button>
             </div>`
 
@@ -22,4 +23,4 @@ const mostrarEntradas = () => {
     });
 
 
-})};
+};
