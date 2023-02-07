@@ -92,3 +92,33 @@ const obtenerCarritoStorage = () => {
     const carritoStorage = JSON.parse(localStorage.getItem('carrito'));
     return carritoStorage;
 };
+
+document.getElementById("vaciar-carrito").addEventListener("click", function() {
+    // Validar si el carrito está vacío
+    if (carrito.length === 0) {
+
+      // Mostrar mensaje "Su carrito esta vacío" con SweetAlert
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Su carrito esta vacío'
+      });
+    } else {
+      // Eliminar todos los productos del carrito
+
+      carrito = [];
+      // Borrar los productos del storage
+      localStorage.removeItem("carrito");
+
+      // Actualizar carrito
+      TotalesCarrito(carrito);
+      actualizarCarrito(carrito);
+
+      // Mostrar mensaje "Los productos han sido eliminados con éxito!" con SweetAlert  
+      Swal.fire({
+        icon: 'success',
+        title: 'Éxito',
+        text: 'Los productos han sido eliminados con éxito!'
+      });
+    }
+  });

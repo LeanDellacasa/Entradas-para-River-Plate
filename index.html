@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     
     
     <title>Venta de Entradas</title>
@@ -23,13 +25,15 @@
     <div class="modal-contenedor">
 
     <div class="modal-carrito">
+        <button id="vaciar-carrito">Vaciar carrito</button>
+
         <h3>Carrito</h3>
         <button id="btn-cerrar-carrito"><i class=""></i></button>
         <div id="carrito-contenedor">
           <p>Producto</p>
           <p>Precio</p>
           <p id=cantidad${producto.id}>Cantidad</p>
-          <button class="btn waves-effect waves-ligth boton-eliminar" value="">X</button>
+          
         </div>
         <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
       </div>
